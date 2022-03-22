@@ -10,14 +10,22 @@ def main():
     screen = pg.display.get_surface()
     #screen = pygame.display.set_mode((disp_w,disp_h)) # ウィンドウサイズの指定
     pg.display.set_caption("Pygame Test") # ウィンドウの上の方に出てくる文字の指定
+    
+    #移動
+    x = 50
+    dx = 10
 
     while(True):
         screen.fill((255,255,224,)) # 背景色の指定。RGB指定
 
         #描画処理
-        pg.draw.rect(screen, (255,0,0),(20,70,100,100))
-
+        pg.draw.rect(screen, (255,0,0),(x,70,100,100))
+        if x >= 300 or x <= 0:
+            dx = -dx
+        x += dx
+        #time.sleep(0.05)
         pg.display.update() # 画面更新
+
 
         for event in pg.event.get(): # 終了処理
             if event.type == QUIT:
