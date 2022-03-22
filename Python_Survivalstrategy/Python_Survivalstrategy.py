@@ -29,8 +29,8 @@ def main():
     # 生き物オブジェクト生成
     #creature1 = Creature()
     creature1 = pg.Rect(20,20,50,50)
+    creature2 = pg.Rect(10,10,50,50)
 
-    x = 50
     dx = 10
 
     while(True):
@@ -38,6 +38,7 @@ def main():
 
         #描画処理
         pg.draw.rect(screen, (255,0,0),creature1)
+        pg.draw.rect(screen, (255,0,0),creature2)
         pg.display.update() # 画面更新
         fpsClock.tick(FPS)
 
